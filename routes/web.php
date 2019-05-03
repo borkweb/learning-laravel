@@ -11,6 +11,14 @@
 |
 */
 
-Route::get( '/', function () {
-    return view( 'welcome' );
+// Login route
+Route::get( 'login', 'Auth\LoginController@login' );
+
+Auth::routes();
+
+// pages that require authentication. Hint: all of them
+Route::group( [ 'middleware' => 'auth' ], function() {
+    Route::get( '/', function () {
+        return view( 'welcome' );
+    } );
 } );
