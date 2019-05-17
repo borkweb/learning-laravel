@@ -13,6 +13,11 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
+    'google' => [
+        'client_id'     => env( 'GOOGLE_KEY' ),
+        'client_secret' => env( 'GOOGLE_SECRET' ),
+        'redirect'      => env( 'GOOGLE_REDIRECT_URI' ),
+    ],
 
     'mailgun' => [
         'domain'   => env( 'MAILGUN_DOMAIN' ),
@@ -35,7 +40,7 @@ return [
     ],
 
     'stripe' => [
-        'model'   => App\User::class,
+        'model'   => App\Models\User::class,
         'key'     => env( 'STRIPE_KEY' ),
         'secret'  => env( 'STRIPE_SECRET' ),
         'webhook' => [
