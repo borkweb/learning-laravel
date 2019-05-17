@@ -5,6 +5,7 @@
 - Set up auth (php artisan make:auth)
 - Added Socialite with Google Auth
 - Passport for API token authentication
+- Added CodeSniffer command (code:php:sniff)
 
 ### Changed
 
