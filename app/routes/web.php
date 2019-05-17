@@ -13,12 +13,16 @@
 
 // Login route
 Route::get( 'login', 'Auth\LoginController@login' );
+Route::get( 'login/callback', 'Auth\LoginController@loginCallback' );
+Route::get( 'logout', 'Auth\LoginController@logout' );
 
 Auth::routes();
 
+Route::get( '/', function () {
+    return view( 'home' );
+} );
+
 // pages that require authentication. Hint: all of them
 Route::group( [ 'middleware' => 'auth' ], function() {
-    Route::get( '/', function () {
-        return view( 'welcome' );
-    } );
+    // place pages that require authentication in here
 } );
